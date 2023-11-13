@@ -1,0 +1,26 @@
+// COLORS
+
+$white: #ffffff;
+$black: #000;
+$grey: #333;
+$green: #336532;
+$black-transparent: rgba(0, 0, 0, 0.8);
+
+// VARIABLES
+
+:root {
+  --color-background: #{$white};
+  --color-font: #{$black};
+  --color-lines: #{$black};
+  --color-primary: #{$green};
+  --color-bottom-nav-bground: #{$black-transparent};
+}
+
+// dark theme
+:root[data-theme="dark"] {
+  --color-background: #{$black};
+  --color-font: #{$white};
+  --color-lines: #{$white};
+  --color-primary: #{$green};
+  --color-bottom-nav-bground: #{$black-transparent};
+}
