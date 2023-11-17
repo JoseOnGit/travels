@@ -6,23 +6,21 @@ import {
   getContinentTrips,
 } from "../utils/utils";
 import { BottomNavWrapper } from "../components/BottomNavWrapper";
-import { TripMenuWrapper } from "../components/TripMenuWrapper";
+import { TripList } from "../components/TripList";
 import { HeadlineContinent } from "../components/HeadlineContinent";
 
 import styles from "../styles/main.module.scss";
 
 const ContinentPage: FC = () => {
   const { continent: currentContinent } = useParams();
-
   const continentData = getContinentData(currentContinent);
   const continentTrips = getContinentTrips(continentData?.label);
   const navItemsWithLinks = getContinentNavItems();
-
   return (
     <>
       <HeadlineContinent continentData={continentData} />
       <div className={styles.contentWrapper}>
-        <TripMenuWrapper continentTrips={continentTrips} />
+        <TripList continentTrips={continentTrips} />
       </div>
       <BottomNavWrapper navItems={navItemsWithLinks} />
     </>
