@@ -9,7 +9,7 @@ type Props = {
   data: TripType;
 };
 
-const TripMenuItem: FC<Props> = ({ data }) => {
+const TripListItem: FC<Props> = ({ data }) => {
   return (
     <div className={styles.tripMenuItem}>
       <Link to={getTripDetailRoutePath(data.name)}>
@@ -21,4 +21,4 @@ const TripMenuItem: FC<Props> = ({ data }) => {
   );
 };
 
-export { TripMenuItem };
+export { TripListItem };
