@@ -6,10 +6,10 @@
       "openFiles": [
         "README.md"
       ]
-    },
-    // Configure properties specific to VS Code.
-		"vscode": {
-			"extensions": [],
-		}
+    }
+  },
+  "vscode": {
+    "extensions": []
   }
 }
+
