@@ -1,1 +1,15 @@
-{"image":"mcr.microsoft.com/devcontainers/universal:2"}
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "customizations": {
+    // Files that will be open on first run of Codebase and VS Code for web.
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    },
+    // Configure properties specific to VS Code.
+		"vscode": {
+			"extensions": [],
+		}
+  }
+}
