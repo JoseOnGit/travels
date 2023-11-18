@@ -6,10 +6,9 @@
       "openFiles": [
         "README.md"
       ]
+    },
+    "vscode": {
+      "extensions": []
     }
-  },
-  "vscode": {
-    "extensions": []
   }
 }
-
