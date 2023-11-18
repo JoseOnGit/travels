@@ -3,12 +3,22 @@
   "customizations": {
     // Files that will be open on first run of Codebase and VS Code for web.
     "codespaces": {
-      "openFiles": [
-        "README.md"
-      ]
+      "openFiles": ["README.md"]
     },
     "vscode": {
-      "extensions": []
+      "extensions": [
+        "lihui.vs-color-picker",
+        "ChakrounAnas.turbo-console-log",
+        "alefragnani.project-manager",
+        "esbenp.prettier-vscode",
+        "ypresto.vscode-intelli-refactor",
+        "eamodio.gitlens",
+        "rehfres.colored-console-log",
+        "naumovs.color-highlight",
+        "wmaurer.change-case",
+        "formulahendry.auto-rename-tag",
+        "DotJoshJohnson.xml"
+      ]
     }
   }
 }
