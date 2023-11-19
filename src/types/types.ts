@@ -1,4 +1,4 @@
-import { Continent } from "../constants/constants";
+// import { Continent } from "../constants/constants";
 
 export type TripType = {
   id: number;

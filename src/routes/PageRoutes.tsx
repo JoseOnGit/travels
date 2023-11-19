@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { MainPage } from "./MainPage";
-import { ContinentPage } from "./ContinentPage";
+import { MainPage } from "../pages/MainPage";
+import { ContinentPage } from "../pages/ContinentPage";
 import { ScrollToTop } from "../components/ScrollToTop";
-import { TripDetailPage } from "./TripDetailPage";
+import { TripDetailPage } from "../pages/TripDetailPage";
 
 type Props = {};
 

@@ -1,5 +1,12 @@
 @import "./variables.module.scss";
 
+body {
+  margin: 0;
+  font-family: $font-default;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 html {
   background-color: var(--color-background);
   color: var(--color-font);
@@ -7,7 +14,7 @@ html {
 }
 
 .App {
-  // text-align: center;
+  text-align: left;
 }
 
 .contentWrapper {

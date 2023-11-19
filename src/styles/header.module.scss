@@ -8,24 +8,24 @@
   padding: 1rem;
   box-sizing: border-box;
 
-  background: linear-gradient(180deg, white, white, transparent);
+  background: var(--color-background-gradient);
 
   z-index: 99;
-}
 
-.headline {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 4rem;
-  text-align: left;
-  position: absolute;
-}
+  .headline {
+    font-family: $font-headline;
+    font-size: 4rem;
+    text-align: left;
+    position: absolute;
+  }
 
-.globe {
-  position: absolute;
-  top: -5rem;
-  right: -4rem;
+  .globe {
+    position: absolute;
+    top: -5rem;
+    right: -4rem;
 
-  img {
-    max-height: 55vh;
+    img {
+      max-height: 55vh;
+    }
   }
 }
