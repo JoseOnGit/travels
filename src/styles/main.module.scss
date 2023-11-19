@@ -11,10 +11,16 @@ html {
   background-color: var(--color-background);
   color: var(--color-font);
   font-size: 10px;
-}
 
-.App {
-  text-align: left;
+  // added to <html> tag when toggle theme and remove afterwards
+  // makes smooth transition of switching color
+  &.colorThemeInTransition,
+  &.colorThemeInTransition *,
+  &.colorThemeInTransition *:before,
+  &.colorThemeInTransition *:after {
+    transition: all 750ms !important;
+    transition-delay: 0 !important;
+  }
 }
 
 .contentWrapper {

@@ -1,5 +1,10 @@
 import { ContinentType } from "../types/types";
 
+export enum Theme {
+  LIGHT = "light",
+  DARK = "dark",
+}
+
 export enum Continent {
   EUROPE = "europe",
   ASIA = "asia",
