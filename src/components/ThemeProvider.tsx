@@ -1,6 +1,11 @@
+// Inspirations:
+// https://vimalselvam.com/post/toggle-theme-using-react-hooks/
+// https://medium.com/@harishv6665_49536/theming-with-react-js-or-any-in-minutes-with-css-variables-11d4ebecdb41
+
 import React, { FC, ReactNode, useEffect, useState } from "react";
 import { Theme } from "../constants/constants";
 import { ThemeType } from "../types/types";
+
 import styles from "../styles/main.module.scss";
 
 type Props = {

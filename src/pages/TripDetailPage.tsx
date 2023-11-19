@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { tripsMenuItemsData } from "../data/tripsMenuItems";
 import styles from "../styles/header.module.scss";
 import { getContinentNavItems } from "../utils/utils";
-import { BottomNavWrapper } from "../components/BottomNavWrapper";
+import { BottomNavWrapper } from "../components/BottomNav/BottomNavWrapper";
 
 type Props = {};
 

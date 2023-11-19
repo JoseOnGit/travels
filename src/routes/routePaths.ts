@@ -1,3 +1,7 @@
+export const getHomeRoutePath = () => {
+  return "/";
+};
+
 export const getTravelByLocationRoutePath = (continent: string) => {
   return `/travelByLocation/${continent}`;
 };

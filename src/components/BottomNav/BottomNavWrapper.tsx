@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import { BottomNavItemType } from "../types/types";
+import { BottomNavItemType } from "../../types/types";
 import { BottomNavItem } from "./BottomNavItem";
 
-import styles from "../styles/navigation.module.scss";
+import styles from "../../styles/navigation.module.scss";
 
 type Props = {
   navItems: BottomNavItemType[];

@@ -1,5 +1,28 @@
 @import "./variables.module.scss";
 
+.mainNav {
+  width: 0vw;
+  height: 0vh;
+  background-color: var(--color-menu-bground);
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0rem;
+
+  transition: 300ms;
+
+  display: flex;
+  justify-content: space-between;
+
+  z-index: 999;
+
+  &.open {
+    width: 100vw;
+    height: 100vh;
+    font-size: 4rem;
+  }
+}
+
 .bottomNavWrapper {
   width: 100%;
   height: 6rem;

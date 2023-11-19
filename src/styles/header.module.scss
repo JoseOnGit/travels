@@ -1,7 +1,44 @@
 @import "./variables.module.scss";
 
-.header {
-  width: 100%;
+.pageHeader {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+
+  position: fixed;
+  z-index: 998;
+
+  .logo {
+    font-family: $font-headline;
+    font-size: 2rem;
+    padding-left: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
+    a {
+      text-decoration: none;
+      color: var(--color-font);
+    }
+  }
+
+  .navIcon {
+    width: 8rem;
+    height: 6rem;
+    fill: var(--color-icons);
+  }
+}
+
+.headline {
+  font-family: $font-headline;
+  font-size: 4rem;
+  text-align: left;
+  position: absolute;
+  top: 7rem;
+}
+
+.headerContinent {
+  width: 100vw;
   height: 30vh;
 
   position: fixed;
@@ -11,13 +48,6 @@
   background: var(--color-background-gradient);
 
   z-index: 99;
-
-  .headline {
-    font-family: $font-headline;
-    font-size: 4rem;
-    text-align: left;
-    position: absolute;
-  }
 
   .globe {
     position: absolute;

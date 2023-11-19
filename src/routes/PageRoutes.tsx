@@ -4,16 +4,34 @@ import { MainPage } from "../pages/MainPage";
 import { ContinentPage } from "../pages/ContinentPage";
 import { ScrollToTop } from "../components/ScrollToTop";
 import { TripDetailPage } from "../pages/TripDetailPage";
+import { LayoutWrapper } from "../components/LayoutWrapper";
 
 type Props = {};
+
+const routes = [
+  {
+    path: "/",
+    page: <MainPage />,
+  },
+  {
+    path: "/travelByLocation/:continent",
+    page: <ContinentPage />,
+  },
+  {
+    path: "/tripDetail/:trip",
+    page: <TripDetailPage />,
+  },
+];
 
 const PageRoutes: FC<Props> = () => (
   <BrowserRouter>
     <ScrollToTop />
     <Routes>
-      <Route path="/" element={<MainPage />} />
-      <Route path="/travelByLocation/:continent" element={<ContinentPage />} />
-      <Route path="/tripDetail/:trip" element={<TripDetailPage />} />
+      <Route path="/" element={<LayoutWrapper />}>
+        {routes.map((route, index) => (
+          <Route key={index} path={route.path} element={route.page} />
+        ))}
+      </Route>
     </Routes>
   </BrowserRouter>
 );

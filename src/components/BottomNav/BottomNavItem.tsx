@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import { BottomNavItemType } from "../types/types";
+import { BottomNavItemType } from "../../types/types";
 
-import styles from "../styles/navigation.module.scss";
+import styles from "../../styles/navigation.module.scss";
 
 type Props = {
   item: BottomNavItemType;

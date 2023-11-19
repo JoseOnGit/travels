@@ -1,9 +1,9 @@
 import React, { FC } from "react";
-import { TripType } from "../types/types";
-
-import styles from "../styles/tripMenu.module.scss";
+import { TripType } from "../../types/types";
 import { Link } from "react-router-dom";
-import { getTripDetailRoutePath } from "../routes/routePaths";
+import { getTripDetailRoutePath } from "../../routes/routePaths";
+
+import styles from "../../styles/tripMenu.module.scss";
 
 type Props = {
   data: TripType;
