@@ -1,5 +1,10 @@
 // import { Continent } from "../constants/constants";
 
+export type ThemeType = {
+  theme: string;
+  toggleTheme: () => void;
+};
+
 export type TripType = {
   id: number;
   continent: string;

@@ -1,11 +1,16 @@
-import React from "react";
-import styles from "./styles/main.module.scss";
+import React, { useEffect } from "react";
 import { PageRoutes } from "./routes/PageRoutes";
+import { ThemeContext } from "./components/ThemeProvider";
 
-const App = () => (
-  <div className={styles.App}>
-    <PageRoutes />
-  </div>
-);
+const App = () => {
+  const { theme } = React.useContext(ThemeContext);
+
+  useEffect(
+    () => document.documentElement.setAttribute("data-theme", theme),
+    [theme]
+  );
+
+  return <PageRoutes />;
+};
 
 export default App;
