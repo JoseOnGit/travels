@@ -4,7 +4,7 @@
 
 import React, { FC, ReactNode, useEffect, useState } from "react";
 import { Theme } from "../constants/constants";
-import { ThemeType } from "../types/types";
+import { ThemeContextType } from "../types/types";
 
 import styles from "../styles/main.module.scss";
 
@@ -12,7 +12,7 @@ type Props = {
   children: ReactNode;
 };
 
-const initialTheme: ThemeType = {
+const initialTheme: ThemeContextType = {
   theme: Theme.LIGHT,
   toggleTheme: () => {},
 };
@@ -27,24 +27,25 @@ const ThemeProvider: FC<Props> = ({ children }) => {
   const [theme, setTheme] = useState(Theme.LIGHT);
 
   // check Local Storage and set theme if it's stored
+  // and set attribute 'data-theme' for <html> tag
 
   useEffect(() => {
     const isDark = localStorage.getItem("theme") === Theme.DARK;
-    setTheme(isDark ? Theme.DARK : Theme.LIGHT);
+    const themeToSwitchTo = isDark ? Theme.DARK : Theme.LIGHT;
+
+    document.documentElement.setAttribute("data-theme", themeToSwitchTo);
+    setTheme(themeToSwitchTo);
   }, [theme]);
 
   // toggle theme,
   // save it in Locale Storage,
-  // set attribute 'data-theme' for <html> tag
-  // add class 'colorThemeInTransition' and remove it afrewards - makes smooth transition of background color
+  // add class 'colorThemeInTransition' and remove it afrewards - makes smooth transition of colors
 
   const toggleTheme = () => {
     const isDark = theme === Theme.DARK;
     const themeToSwitchTo = isDark ? Theme.LIGHT : Theme.DARK;
 
     document.documentElement.classList.add(styles.colorThemeInTransition);
-    document.documentElement.setAttribute("data-theme", theme);
-
     localStorage.setItem("theme", themeToSwitchTo);
     setTheme(themeToSwitchTo);
 

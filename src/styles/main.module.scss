@@ -21,6 +21,10 @@ html {
     transition: all 750ms !important;
     transition-delay: 0 !important;
   }
+
+  &.openMenu {
+    overflow-y: hidden;
+  }
 }
 
 .contentWrapper {

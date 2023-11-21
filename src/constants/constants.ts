@@ -1,4 +1,4 @@
-import { ContinentType } from "../types/types";
+import { ContinentType, NavItemType } from "../types/types";
 
 export enum Theme {
   LIGHT = "light",
@@ -40,5 +40,44 @@ export const ContinentsData: ContinentType[] = [
     label: "Africa",
     icon: "/img/icon_africa.png",
     globe: "/img/globe_africa.png",
+  },
+];
+
+export const MainNavItems: NavItemType[] = [
+  {
+    id: 1,
+    label: "Travels",
+    link: "",
+    icon: "",
+  },
+  {
+    id: 2,
+    label: "About us",
+    link: "",
+    icon: "",
+  },
+  {
+    id: 3,
+    label: "Contact",
+    link: "",
+    icon: "",
+  },
+  {
+    id: 43,
+    label: "Contact",
+    link: "",
+    icon: "",
+  },
+  {
+    id: 5,
+    label: "Contact",
+    link: "",
+    icon: "",
+  },
+  {
+    id: 6,
+    label: "Contact",
+    link: "",
+    icon: "",
   },
 ];

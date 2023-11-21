@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import { getTravelByLocationRoutePath } from "../routes/routePaths";
 import { Continent } from "../constants/constants";
-import { ThemeContext } from "../components/ThemeProvider";
+import { ThemeContext } from "../contexts/ThemeProvider";
 import "../styles/main.module.scss";
 
 type Props = {};

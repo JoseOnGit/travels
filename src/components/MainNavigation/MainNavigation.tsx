@@ -1,19 +1,45 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import cx from "classnames";
+import { MainNavItems } from "../../constants/constants";
+import { MainNavigationItem } from "./MainNavigationItem";
 import styles from "../../styles/navigation.module.scss";
-import { PageHeader } from "../PageHeader";
+import { NavContext } from "../../contexts/NavProvider";
 
-type Props = {
-  isOpen: boolean;
-  setIsOpen: (value: React.SetStateAction<boolean>) => void;
-};
+type Props = {};
 
-const MainNavigation: FC<Props> = ({ isOpen, setIsOpen }) => {
-  const classes = isOpen ? cx(styles.mainNav, styles.open) : styles.mainNav;
+const MainNavigation: FC<Props> = () => {
+  const { isOpen, toggleOpenNav } = React.useContext(NavContext);
+
+  const [elementClasses, setElementClasses] = useState(styles.mainNav);
+
+  useEffect(() => {
+    if (isOpen) {
+      // when MainNav is open,
+      // add class .open
+      setElementClasses(cx(styles.mainNav, styles.open));
+    } else {
+      // when MainNav is closed,
+      // remove class .open and add class .transitionDelay,
+      // so NavItem-ANIMATION runs before MainNav-bground-ANIMATION,
+      // then remove also .transitionDelay
+      // so we get initial state.
+      setElementClasses(cx(styles.mainNav, styles.transitionDelay));
+      window.setTimeout(() => {
+        setElementClasses(styles.mainNav);
+      }, 300);
+    }
+  }, [isOpen]);
 
   return (
-    <div className={classes}>
-      <PageHeader isOpen={isOpen} setIsOpen={setIsOpen} />
+    <div className={elementClasses}>
+      {MainNavItems.map((item) => (
+        <MainNavigationItem
+          key={item.id}
+          item={item}
+          isOpen={isOpen}
+          toggleOpenNav={toggleOpenNav}
+        />
+      ))}
     </div>
   );
 };

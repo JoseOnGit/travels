@@ -1,8 +1,13 @@
 // import { Continent } from "../constants/constants";
 
-export type ThemeType = {
+export type ThemeContextType = {
   theme: string;
   toggleTheme: () => void;
+};
+
+export type NavContextType = {
+  isOpen: boolean;
+  toggleOpenNav: () => void;
 };
 
 export type TripType = {
@@ -22,7 +27,7 @@ export type ContinentType = {
   globe: string;
 };
 
-export type BottomNavItemType = {
+export type NavItemType = {
   id: number;
   icon: string;
   label: string;

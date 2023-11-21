@@ -4,21 +4,24 @@ import { Link } from "react-router-dom";
 import { getHomeRoutePath } from "../routes/routePaths";
 import { ReactComponent as Navicon } from "../libs/navicon.svg";
 import { ReactComponent as Close } from "../libs/close.svg";
+import { NavContext } from "../contexts/NavProvider";
 
-type Props = {
-  isOpen: boolean;
-  setIsOpen: (value: React.SetStateAction<boolean>) => void;
-};
+type Props = {};
 
-const PageHeader: FC<Props> = ({ isOpen, setIsOpen }) => {
+const PageHeader: FC<Props> = () => {
+  const { isOpen, toggleOpenNav } = React.useContext(NavContext);
+
   return (
     <div className={styles.pageHeader}>
       <div className={styles.logo}>
-        <Link onClick={() => setIsOpen(false)} to={getHomeRoutePath()}>
+        <Link
+          onClick={() => (isOpen ? toggleOpenNav() : {})}
+          to={getHomeRoutePath()}
+        >
           MIRKA & JOZEF
         </Link>
       </div>
-      <div onClick={() => setIsOpen(!isOpen)}>
+      <div onClick={() => toggleOpenNav()}>
         {isOpen ? (
           <Close className={styles.navIcon} />
         ) : (

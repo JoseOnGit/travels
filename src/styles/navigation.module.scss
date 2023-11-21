@@ -4,22 +4,62 @@
   width: 0vw;
   height: 0vh;
   background-color: var(--color-menu-bground);
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 0rem;
-
-  transition: 300ms;
+  position: fixed;
+  top: 3rem;
+  right: 4rem;
+  border-radius: 10rem;
+  padding: 0rem;
+  box-sizing: border-box;
+  overflow-y: scroll;
 
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: flex-start;
 
-  z-index: 999;
+  z-index: 998;
+
+  transition: 200ms;
+
+  &.transitionDelay {
+    transition: 150ms;
+    transition-delay: 150ms;
+  }
+
+  .mainNavItem {
+    font-family: $font-headline;
+    font-size: 4rem;
+    padding: 0rem;
+
+    height: 0rem;
+    line-height: 0rem;
+    visibility: hidden;
+    color: var(--color-menu-bground);
+
+    width: 100%;
+
+    transition: 200ms;
+
+    &.transitionDelay {
+      transition: 500ms;
+      transition-delay: 100ms;
+    }
+  }
 
   &.open {
-    width: 100vw;
+    width: calc(100vw + 20rem);
     height: 100vh;
-    font-size: 4rem;
+    top: 0rem;
+    right: -10rem;
+    padding: 5.5rem 11rem;
+
+    .mainNavItem {
+      padding: 2rem 0rem;
+      height: 4rem;
+      line-height: 4rem;
+      visibility: visible;
+      color: var(--color-font);
+    }
   }
 }
 
@@ -37,6 +77,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  transition: 200ms;
+
+  &.hidden {
+    bottom: -6rem;
+  }
 }
 
 .bottomNavIconWrapper {
