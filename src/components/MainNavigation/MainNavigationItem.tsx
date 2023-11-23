@@ -44,7 +44,7 @@ const MainNavigationItem: FC<Props> = ({ item, isOpen, toggleOpenNav }) => {
           </div>
           <div className={styles.subItemBox}>
             {item.children.map((child) => (
-              <Link onClick={toggleOpenNav} to={child.link}>
+              <Link key={child.id} onClick={toggleOpenNav} to={child.link}>
                 {child.label}
               </Link>
             ))}
@@ -52,7 +52,7 @@ const MainNavigationItem: FC<Props> = ({ item, isOpen, toggleOpenNav }) => {
         </>
       ) : (
         <div className={navItemClasses}>
-          <Link onClick={toggleOpenNav} to={item.link}>
+          <Link key={item.id} onClick={toggleOpenNav} to={item.link}>
             {item.label}
           </Link>
         </div>
