@@ -123,12 +123,13 @@
 
       a {
         color: var(--color-font);
+
         font-size: 3rem;
         line-height: normal;
         height: auto;
         padding: 0.5rem 0rem;
         visibility: visible;
-        transition: all 400ms;
+        transition: 400ms;
         transition-delay: 500ms;
       }
     }
@@ -144,7 +145,7 @@
   background-color: var(--color-bottom-nav-bground);
 
   position: fixed;
-  bottom: 0;
+  bottom: -0.1rem;
 
   display: flex;
   flex-direction: row;

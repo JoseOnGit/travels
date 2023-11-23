@@ -19,7 +19,7 @@ html {
   &.colorThemeInTransition *:before,
   &.colorThemeInTransition *:after {
     transition: all 750ms !important;
-    transition-delay: 0 !important;
+    transition-delay: 0ms !important;
   }
 
   &.openMenu {
@@ -31,5 +31,5 @@ html {
   height: 2000px;
   padding: 1rem;
 
-  transition: color 750ms !important;
+  transition: all 750ms !important;
 }
