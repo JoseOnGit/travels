@@ -31,10 +31,11 @@
 
   .mainNavItem {
     font-family: $font-headline;
+    box-sizing: border-box;
     font-size: 4rem;
-    padding: 0rem;
 
     height: 0rem;
+    padding: 0rem;
     line-height: 0rem;
     visibility: hidden;
     color: var(--color-menu-bground);
@@ -62,6 +63,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    box-sizing: border-box;
 
     height: 0rem;
     padding: 0rem 2rem;
