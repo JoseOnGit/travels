@@ -14,12 +14,16 @@ const routes = [
     page: <MainPage />,
   },
   {
-    path: "/travelByLocation/:continent",
+    path: "/travelsByLocation/:continent",
     page: <ContinentPage />,
   },
   {
     path: "/tripDetail/:trip",
     page: <TripDetailPage />,
+  },
+  {
+    path: "/contact",
+    page: <div />,
   },
 ];
 

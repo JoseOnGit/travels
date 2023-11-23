@@ -32,4 +32,5 @@ export type NavItemType = {
   icon: string;
   label: string;
   link: string;
+  children?: NavItemType[];
 };

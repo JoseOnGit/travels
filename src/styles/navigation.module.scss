@@ -3,12 +3,13 @@
 .mainNav {
   width: 0vw;
   height: 0vh;
-  background-color: var(--color-menu-bground);
-  position: fixed;
   top: 3rem;
   right: 4rem;
-  border-radius: 10rem;
   padding: 0rem;
+
+  border-radius: 10rem;
+  background-color: var(--color-menu-bground);
+  position: fixed;
   box-sizing: border-box;
   overflow-y: scroll;
 
@@ -21,6 +22,8 @@
 
   transition: 200ms;
 
+  // add this class when MainNav is closed
+  // bacground animation get delay so NavItems animation run first
   &.transitionDelay {
     transition: 150ms;
     transition-delay: 150ms;
@@ -40,9 +43,52 @@
 
     transition: 200ms;
 
+    // add this class when MainNav is open,
+    // NevItems get delay, so background animation run first
+    // set also slower transition than 'on close'
     &.transitionDelay {
       transition: 500ms;
       transition-delay: 100ms;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .subItemBox {
+    font-family: $font-headline;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    height: 0rem;
+    padding: 0rem 2rem;
+
+    border-top-width: 0px;
+    border-top-style: solid;
+    border-top-color: var(--color-menu-bground);
+    border-bottom-width: 0px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-menu-bground);
+
+    transition: 100ms;
+    transition-delay: 0ms;
+
+    a {
+      text-decoration: none;
+      color: var(--color-menu-bground);
+
+      width: 100%;
+      font-size: 0rem;
+      line-height: 0rem;
+      height: 0rem;
+      padding: 0rem;
+      visibility: hidden;
+
+      transition: 100ms;
+      transition-delay: 0ms;
     }
   }
 
@@ -51,14 +97,38 @@
     height: 100vh;
     top: 0rem;
     right: -10rem;
-    padding: 5.5rem 11rem;
+    padding: 5rem 11rem;
 
     .mainNavItem {
       padding: 2rem 0rem;
-      height: 4rem;
-      line-height: 4rem;
+      height: auto;
+      line-height: normal;
       visibility: visible;
       color: var(--color-font);
+    }
+
+    .subItemBox {
+      height: auto;
+      padding: 1rem 2rem;
+
+      border-top-width: 1px;
+      border-top-color: var(--color-lines);
+      border-bottom-width: 1px;
+      border-bottom-color: var(--color-lines);
+
+      transition: 400ms;
+      transition-delay: 500ms;
+
+      a {
+        color: var(--color-font);
+        font-size: 3rem;
+        line-height: normal;
+        height: auto;
+        padding: 0.5rem 0rem;
+        visibility: visible;
+        transition: all 400ms;
+        transition-delay: 500ms;
+      }
     }
   }
 }
