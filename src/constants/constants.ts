@@ -1,4 +1,8 @@
-import { ContinentType } from "../types/types";
+import {
+  getContactRoutePath,
+  getTravelByLocationRoutePath,
+} from "../routes/routePaths";
+import { ContinentType, NavItemType } from "../types/types";
 
 export enum Theme {
   LIGHT = "light",
@@ -40,5 +44,58 @@ export const ContinentsData: ContinentType[] = [
     label: "Africa",
     icon: "/img/icon_africa.png",
     globe: "/img/globe_africa.png",
+  },
+];
+
+export const MainNavItems: NavItemType[] = [
+  {
+    id: 1,
+    label: "Travels",
+    link: "",
+    icon: "",
+    children: [
+      {
+        id: 1.1,
+        label: "by locations",
+        link: getTravelByLocationRoutePath(Continent.EUROPE),
+        icon: "",
+      },
+      {
+        id: 1.2,
+        label: "by time",
+        link: getTravelByLocationRoutePath(Continent.EUROPE),
+        icon: "",
+      },
+    ],
+  },
+  {
+    id: 2,
+    label: "About us",
+    link: getContactRoutePath(),
+    icon: "",
+  },
+  {
+    id: 3,
+    label: "Contact",
+    link: getContactRoutePath(),
+    icon: "",
+  },
+  {
+    id: 43,
+    label: "Contact",
+    link: getContactRoutePath(),
+    icon: "",
+  },
+  {
+    id: 5,
+    label: "Contact",
+    link: getContactRoutePath(),
+    icon: "",
+  },
+  {
+    id: 6,
+    label: "Contact",
+    link: getContactRoutePath(),
+    icon: "",
   },
 ];

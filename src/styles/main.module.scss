@@ -21,9 +21,15 @@ html {
     transition: all 750ms !important;
     transition-delay: 0 !important;
   }
+
+  &.openMenu {
+    overflow-y: hidden;
+  }
 }
 
 .contentWrapper {
   height: 2000px;
   padding: 1rem;
+
+  transition: color 750ms !important;
 }

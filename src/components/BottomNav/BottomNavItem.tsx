@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import { BottomNavItemType } from "../types/types";
+import { NavItemType } from "../../types/types";
 
-import styles from "../styles/navigation.module.scss";
+import styles from "../../styles/navigation.module.scss";
 
 type Props = {
-  item: BottomNavItemType;
+  item: NavItemType;
 };
 
 const BottomNavItem: FC<Props> = ({ item }) => {

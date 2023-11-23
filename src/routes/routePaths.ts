@@ -1,7 +1,15 @@
+export const getHomeRoutePath = () => {
+  return "/";
+};
+
 export const getTravelByLocationRoutePath = (continent: string) => {
-  return `/travelByLocation/${continent}`;
+  return `/travelsByLocation/${continent}`;
 };
 
 export const getTripDetailRoutePath = (trip: string) => {
   return `/tripDetail/${trip}`;
+};
+
+export const getContactRoutePath = () => {
+  return `/contact`;
 };

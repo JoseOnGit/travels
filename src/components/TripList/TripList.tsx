@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import { TripType } from "../types/types";
+import { TripType } from "../../types/types";
 import { TripListItem } from "./TripListItem";
 
-import styles from "../styles/tripMenu.module.scss";
+import styles from "../../styles/tripMenu.module.scss";
 
 type Props = {
   continentTrips: TripType[];

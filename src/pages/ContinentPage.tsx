@@ -5,9 +5,9 @@ import {
   getContinentNavItems,
   getContinentTrips,
 } from "../utils/utils";
-import { BottomNavWrapper } from "../components/BottomNavWrapper";
-import { TripList } from "../components/TripList";
-import { HeadlineContinent } from "../components/HeadlineContinent";
+import { BottomNavWrapper } from "../components/BottomNav/BottomNavWrapper";
+import { TripList } from "../components/TripList/TripList";
+import { HeaderContinent } from "../components/HeaderContinent";
 
 import styles from "../styles/main.module.scss";
 
@@ -18,7 +18,7 @@ const ContinentPage: FC = () => {
   const navItemsWithLinks = getContinentNavItems();
   return (
     <>
-      <HeadlineContinent continentData={continentData} />
+      <HeaderContinent continentData={continentData} />
       <div className={styles.contentWrapper}>
         <TripList continentTrips={continentTrips} />
       </div>
