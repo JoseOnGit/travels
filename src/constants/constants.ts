@@ -81,7 +81,7 @@ export const MainNavItems: NavItemType[] = [
     icon: "",
   },
   {
-    id: 43,
+    id: 4,
     label: "Contact",
     link: getContactRoutePath(),
     icon: "",
@@ -94,6 +94,24 @@ export const MainNavItems: NavItemType[] = [
   },
   {
     id: 6,
+    label: "Contact",
+    link: getContactRoutePath(),
+    icon: "",
+  },
+  {
+    id: 7,
+    label: "Contact",
+    link: getContactRoutePath(),
+    icon: "",
+  },
+  {
+    id: 8,
+    label: "Contact",
+    link: getContactRoutePath(),
+    icon: "",
+  },
+  {
+    id: 9,
     label: "Contact",
     link: getContactRoutePath(),
     icon: "",
