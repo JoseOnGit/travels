@@ -167,30 +167,11 @@
   img {
     height: 4.5rem;
     width: 4.5rem;
-    transition: 0s;
-  }
-
-  .clicked {
-    transition: 0.5s ease-in;
-    transform: translateY(-50vh) scale(60);
-    opacity: 0.7;
-
-    &.Europe {
-      transform: translateY(-100vh) translateX(0vw) scale(60);
-    }
-    &.Asia {
-      transform: translateY(-50vh) scale(60);
-    }
-    &.America {
-      transform: translateY(30vh) translateX(0vw) scale(60);
-    }
-    &.Africa {
-      transform: translateY(-30vh) translateX(-50vw) scale(60);
-    }
+    transition: 0.1s;
   }
 
   &:active img {
     transform: scale(0.9);
-    // opacity: 0.5;
+    opacity: 0.5;
   }
 }
