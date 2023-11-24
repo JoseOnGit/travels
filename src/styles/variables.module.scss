@@ -1,15 +1,27 @@
 // COLORS
 
-$black: #000;
+$black: #000000;
 $white: #ffffff;
+$light-grey: #eeeeee;
 $grey: #333;
+$dark-grey: #1f1f1f;
 $green: #336532;
 
 $black-transparent: rgba(0, 0, 0, 0.8);
 $white-transparent: rgba(255, 255, 255, 0.9);
 $grey-transparent: rgba(91, 91, 91, 0.95);
-$black-transparent-gradient: linear-gradient(180deg, black, black, transparent);
-$white-transparent-gradient: linear-gradient(180deg, white, white, transparent);
+$black-transparent-gradient: linear-gradient(
+  180deg,
+  $dark-grey,
+  $dark-grey,
+  transparent
+);
+$white-transparent-gradient: linear-gradient(
+  180deg,
+  $light-grey,
+  $light-grey,
+  transparent
+);
 
 // VARIABLES
 
@@ -20,7 +32,7 @@ $font-default: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen"
 // LIGHT THEME
 
 :root {
-  --color-background: #{$white};
+  --color-background: #{$light-grey};
   --color-font: #{$black};
   --color-lines: #{$black};
   --color-icons: #{$black};
@@ -33,7 +45,7 @@ $font-default: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen"
 // DARK THEME
 
 :root[data-theme="dark"] {
-  --color-background: #{$black};
+  --color-background: #{$dark-grey};
   --color-font: #{$white};
   --color-lines: #{$white};
   --color-icons: #{$white};
