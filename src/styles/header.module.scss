@@ -65,16 +65,7 @@
     background-size: 0% 0%;
     opacity: 0;
   }
-  // 20% {
-  // background-size: 10% 20%;
-  // }
-  20% {
-    background-position: right top;
-    // background-size: 75% 50%;
-  }
-  70% {
-    // background-position: right top;
-    background-size: 140% 100%;
+  75% {
     opacity: 1;
   }
 }
@@ -95,13 +86,14 @@
   &::before {
     content: "";
     display: block;
-    width: 100vw;
+    width: 30rem;
     height: 32rem;
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-size: 140% 100%;
+    background-size: 160% 100%;
     background-image: radial-gradient(
       closest-side at 50% 65%,
       rgba(0, 0, 0, 0.6) 5%,
