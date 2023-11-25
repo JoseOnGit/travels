@@ -1,38 +1,43 @@
-// COLORS
+@import url("https://fonts.cdnfonts.com/css/impact");
 
-$black: #000000;
-$white: #ffffff;
-$light-grey: #eeeeee;
-$grey: #333;
-$dark-grey: #1f1f1f;
-$green: #336532;
-
-$black-transparent: rgba(0, 0, 0, 0.8);
-$white-transparent: rgba(255, 255, 255, 0.9);
-$grey-transparent: rgba(91, 91, 91, 0.95);
-$black-transparent-gradient: linear-gradient(
-  180deg,
-  $dark-grey,
-  $dark-grey,
-  transparent
-);
-$white-transparent-gradient: linear-gradient(
-  180deg,
-  $white,
-  $light-grey,
-  transparent
-);
-
-// VARIABLES
+// FONTS
 
 $font-headline: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 $font-default: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
+// COLORS
+
+$white: #ffffff;
+$grey-100: #eeeeee;
+$grey-500: #5b5b5b;
+$grey-800: #333333;
+$grey-900: #2b2b2b;
+$black: #000000;
+$green: #336532;
+
+$white-transparent: #{$white}e6; // equal to rgba(255, 255, 255, 0.9)
+$grey-100-transparent: #{$grey-100}00; // equal to rgba(237, 237, 237, 0)
+$grey-500-transparent: #{$grey-500}f2; // equal to rgba(91, 91, 91, 0.95);
+$black-transparent: #{$black}cc; // equal to rgba(0, 0, 0, 0.8);
+
+$black-transparent-gradient: linear-gradient(
+  180deg,
+  $grey-900,
+  $grey-900,
+  transparent
+);
+$white-transparent-gradient: linear-gradient(
+  180deg,
+  $white,
+  $grey-100,
+  transparent
+);
+
 // LIGHT THEME
 
 :root {
-  --color-background: #{$light-grey};
+  --color-background: #{$grey-100};
   --color-font: #{$black};
   --color-lines: #{$black};
   --color-icons: #{$black};
@@ -45,12 +50,12 @@ $font-default: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen"
 // DARK THEME
 
 :root[data-theme="dark"] {
-  --color-background: #{$dark-grey};
+  --color-background: #{$grey-900};
   --color-font: #{$white};
   --color-lines: #{$white};
   --color-icons: #{$white};
   --color-primary: #{$green};
-  --color-bottom-nav-bground: #{$grey-transparent};
+  --color-bottom-nav-bground: #{$grey-500-transparent};
   --color-background-gradient: #{$black-transparent-gradient};
-  --color-menu-bground: #{$grey-transparent};
+  --color-menu-bground: #{$grey-500-transparent};
 }
