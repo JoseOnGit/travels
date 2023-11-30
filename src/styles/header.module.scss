@@ -43,32 +43,7 @@
   top: 7rem;
 }
 
-// combination of scaling and rotating with axis of rotating far on the left side
-// creates nice "fly in" animation of globe
-
-@keyframes globeFlyIn {
-  0% {
-    transform: scale(0.1) rotate(60deg);
-    transform-origin: 50rem 10rem;
-  }
-}
-
-@keyframes globeWaving {
-  50% {
-    transform: scale(0.95) rotate(2deg);
-  }
-}
-
-@keyframes movingShadow {
-  0% {
-    background-position: right top;
-    background-size: 0% 0%;
-    opacity: 0;
-  }
-  75% {
-    opacity: 1;
-  }
-}
+// CONTINENTS HEADER
 
 .headerContinent {
   width: 100vw;
@@ -78,7 +53,7 @@
   padding: 1rem;
   box-sizing: border-box;
 
-  background: var(--color-background-gradient);
+  background: $header-continent-background;
 
   z-index: 98;
 
@@ -87,28 +62,30 @@
     content: "";
     display: block;
     width: 30rem;
-    height: 32rem;
+    height: 29rem;
     position: absolute;
     top: 0;
     right: 0;
-    background-position: center center;
+    background-position: 35% 100%;
+
     background-repeat: no-repeat;
     background-size: 160% 100%;
-    background-image: radial-gradient(
-      closest-side at 50% 65%,
-      $black-transparent 5%,
-      $grey-100-transparent 60%
-    );
+    background-image: $globe-shadow;
+
+    animation: shadow_Pulsing 10s 1s ease infinite;
   }
 
+  // class .animate is added to header on page load and removed afterwards
+  // so animation of globe 'fly in' the screen runs when page is loaded
   &.animate .globe img {
-    // animation with ease-out timing function on steroids, so on page load globe 'fly in' quickly with slow end
-    animation: globeFlyIn 1s 0s cubic-bezier(0.02, 0.01, 0.21, 1);
+    // animation with ease-out timing function on steroids - cubic-bezier(),
+    // so on page load globe 'fly in' quickly with slow end
+    animation: globe_FlyIn 0.7s 0s cubic-bezier(0.02, 0.01, 0.21, 1);
   }
 
   &.animate::before {
-    // animation with ease-out timing function on steroids, so on page load globe 'fly in' quickly with slow end
-    animation: movingShadow 1s ease-out;
+    // animation of shadow under the globe when it 'fly in'
+    animation: shadow_FlyIn 0.7s linear;
   }
 
   .globe {
@@ -117,9 +94,57 @@
     right: -4rem;
 
     img {
+      filter: var(--globe-brightness);
       max-height: 55vh;
-      // infinite animation of slow globe waving in a space
-      animation: globeWaving 10s 1s ease infinite;
+      // infinite animation of slow globe pulsing in a space
+      animation: globe_Pulsing 10s 1s ease infinite;
     }
+  }
+}
+
+// GLOBE ANIMATIONS
+// ================
+
+// combination of scaling and rotating,
+// with axis of rotating far on the left side,
+// creates nice "fly in" animation of globe
+@keyframes globe_FlyIn {
+  0% {
+    transform: scale(0.1) rotate(60deg);
+    transform-origin: 50rem 10rem;
+  }
+}
+
+// makes shadow of globe 'fly in' the screen smootly together with globe
+@keyframes shadow_FlyIn {
+  0% {
+    background-position: 120% 50%;
+    background-size: 0% 0%;
+    opacity: 0;
+  }
+  70% {
+    background-position-x: 35%;
+    background-size: 140% 100%;
+    opacity: 0.7;
+  }
+  100% {
+    background-position-x: 35%;
+    background-size: 160% 100%;
+  }
+}
+
+// makes globe slowly pulsing
+@keyframes globe_Pulsing {
+  50% {
+    transform: scale(0.95) rotate(2deg);
+    // transform-origin: 0% 100%;
+  }
+}
+
+// makes globe's shadow slowly pulsing
+@keyframes shadow_Pulsing {
+  50% {
+    background-position: 30% 40%;
+    background-size: 120% 90%;
   }
 }
