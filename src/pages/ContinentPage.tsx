@@ -20,14 +20,13 @@ const ContinentPage: FC = () => {
   const navItemsWithLinks = getContinentNavItems();
 
   const [leavingSite, setLeavingSite] = useState(false);
-  console.log("🚀 ~ leavingSite:", leavingSite);
 
   const handleLeavingSite = (to: string) => {
     setLeavingSite(true);
     window.setTimeout(() => {
       navigate(to);
       setLeavingSite(false);
-    }, 700);
+    }, 500);
   };
 
   return (
@@ -37,7 +36,7 @@ const ContinentPage: FC = () => {
         leavingSite={leavingSite}
       />
       <div className={styles.contentWrapper}>
-        <TripList continentTrips={continentTrips} />
+        <TripList continentTrips={continentTrips} leavingSite={leavingSite} />
       </div>
       <BottomNavWrapper
         navItems={navItemsWithLinks}

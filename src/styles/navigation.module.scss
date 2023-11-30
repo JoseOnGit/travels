@@ -194,30 +194,5 @@
     transition: 0.5s;
     opacity: 0.5;
     filter: drop-shadow(0px 0px 0px $black);
-    animation: bottomNavIcon_Blink 0.7s ease-in-out;
-  }
-}
-
-@keyframes bottomNavIcon_Blink {
-  0% {
-    filter: drop-shadow(2px 4px 6px $black);
-    transform: scale(1);
-  }
-  30% {
-    filter: drop-shadow(2px 4px 8px $black);
-    transform: scale(1.5);
-    opacity: 1;
-  }
-  55% {
-    filter: drop-shadow(0px 0px 0px $black);
-    transform: scale(0.7);
-    opacity: 0.3;
-  }
-  70% {
-    transform: scale(1.1);
-    opacity: 0.5;
-  }
-  90% {
-    transform: scale(0.9);
   }
 }

@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { Link } from "react-router-dom";
 import { NavItemType } from "../../types/types";
 import cx from "classnames";
 import styles from "../../styles/navigation.module.scss";

@@ -3,6 +3,21 @@
 .tripMenuWrapper {
   position: relative;
   top: 30vh;
+
+  &.animate .tripMenuItem {
+    transition: 0ms;
+    padding: 10rem 1rem;
+    border-top-color: var(--color-background);
+    border-bottom-color: var(--color-background);
+
+    a {
+      transition: 0ms;
+      color: var(--color-background);
+    }
+  }
+  &.animate.out .tripMenuItem {
+    transition: 400ms;
+  }
 }
 
 .tripMenuItem {
@@ -10,7 +25,14 @@
   padding: 1rem;
   box-sizing: border-box;
 
+  a {
+    color: var(--color-font);
+    transition: 700ms;
+  }
+
   border-bottom: 1px solid var(--color-lines);
+
+  transition: 700ms;
 
   &:first-child {
     border-top: 1px solid var(--color-lines);
