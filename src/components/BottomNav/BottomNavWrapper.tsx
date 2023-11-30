@@ -8,9 +8,10 @@ import styles from "../../styles/navigation.module.scss";
 type Props = {
   navItems: NavItemType[];
   selectedItem: string | undefined;
+  leaveSite: (to: string) => void;
 };
 
-const BottomNavWrapper: FC<Props> = ({ navItems, selectedItem }) => {
+const BottomNavWrapper: FC<Props> = ({ navItems, selectedItem, leaveSite }) => {
   const { isOpen } = React.useContext(NavContext);
 
   const bottomNavWrapperClasses = isOpen
@@ -25,6 +26,7 @@ const BottomNavWrapper: FC<Props> = ({ navItems, selectedItem }) => {
             item={navItem}
             key={navItem.id}
             selected={navItem.name === selectedItem}
+            leaveSite={leaveSite}
           />
         );
       })}

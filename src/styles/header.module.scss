@@ -88,6 +88,15 @@
     animation: shadow_FlyIn 0.7s linear;
   }
 
+  &.animateOut::before {
+    // animation of shadow under the globe when it 'fly in'
+    animation: shadow_FlyOut 0.7s linear forwards;
+  }
+
+  &.animateOut .globe img {
+    animation: globe_FlyOut 0.5s ease-in-out forwards;
+  }
+
   .globe {
     position: absolute;
     top: -5rem;
@@ -112,6 +121,31 @@
   0% {
     transform: scale(0.1) rotate(60deg);
     transform-origin: 50rem 10rem;
+  }
+}
+@keyframes globe_FlyOut {
+  30% {
+    transform: translateY(2rem);
+    transform-origin: 50% 100%;
+  }
+  100% {
+    transform: translateY(-32rem);
+    transform-origin: 50% 100%;
+  }
+}
+
+@keyframes shadow_FlyOut {
+  30% {
+    background-position: 35% 100%;
+    background-size: 180% 100%;
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    background-size: 0% 0%;
+    opacity: 0;
   }
 }
 
