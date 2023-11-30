@@ -21,6 +21,7 @@ $full-transparent: #{$white}00; // equal to rgba(255, 255, 255, 0)
 $white-transparent-9: #{$white}e6; // equal to rgba(255, 255, 255, 0.9)
 $grey-500-transparent-9: #{$grey-500}f2; // equal to rgba(91, 91, 91, 0.95);
 $black-transparent-8: #{$black}cc; // equal to rgba(0, 0, 0, 0.8);
+$green-transparent-9: #{$green}e6; // equal to
 
 // BACKGROUNDS
 
@@ -47,8 +48,7 @@ $globe-shadow: radial-gradient(
   --color-primary: #{$green};
 
   --background-transparent-mainNav: #{$white-transparent-9};
-  // --background-transparent-bottomNav: #{$black-transparent-8};
-  --background-transparent-bottomNav: var(--color-primary);
+  --background-transparent-bottomNav: #{$green-transparent-9};
 
   // --globe-brightness: ;
   --globe-shadow-center: #{$grey-500-transparent-9};
@@ -64,8 +64,8 @@ $globe-shadow: radial-gradient(
   --color-primary: #{$green};
 
   --background-transparent-mainNav: #{$grey-500-transparent-9};
-  // --background-transparent-bottomNav: #{$grey-500-transparent-9};
-  --background-transparent-bottomNav: var(--color-primary);
+  // --background-transparent-bottomNav: var(--color-primary);
+  --background-transparent-bottomNav: #{$green-transparent-9};
 
   --globe-brightness: brightness(0.9);
   --globe-shadow-center: #{$black-transparent-8};

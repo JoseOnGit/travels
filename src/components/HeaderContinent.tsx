@@ -6,9 +6,10 @@ import styles from "../styles/header.module.scss";
 
 type Props = {
   continentData: ContinentType;
+  leavingSite: boolean;
 };
 
-const HeaderContinent: FC<Props> = ({ continentData }) => {
+const HeaderContinent: FC<Props> = ({ continentData, leavingSite }) => {
   const { continent } = useParams();
 
   const [headerClasses, setHeaderClasses] = useState(styles.headerContinent);
@@ -19,6 +20,12 @@ const HeaderContinent: FC<Props> = ({ continentData }) => {
       setHeaderClasses(styles.headerContinent);
     }, 700);
   }, [continent]);
+
+  useEffect(() => {
+    if (leavingSite) {
+      setHeaderClasses(cx(styles.headerContinent, styles.animateOut));
+    }
+  }, [leavingSite]);
 
   return (
     <div className={headerClasses}>
