@@ -1,4 +1,5 @@
 @import "./variables.module.scss";
+@import "./main.module.scss";
 
 .pageHeader {
   width: 100vw;
@@ -35,17 +36,6 @@
   }
 }
 
-@keyframes headline_slideIn {
-  0% {
-    left: -40rem;
-  }
-}
-@keyframes headline_slideOut {
-  100% {
-    left: -40rem;
-  }
-}
-
 // CONTINENTS HEADER
 
 .headerContinent {
@@ -67,54 +57,11 @@
     position: absolute;
     top: 7rem;
     left: 1rem;
+
+    transition: 0.5s;
   }
 
-  // globe shadow
-  &::before {
-    content: "";
-    display: block;
-    width: 30rem;
-    height: 29rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-position: 35% 100%;
-
-    background-repeat: no-repeat;
-    background-size: 160% 100%;
-    background-image: $globe-shadow;
-
-    // animation: shadow_Pulsing 10s 1s ease infinite;
-  }
-
-  // class .animate is added to header on page load and removed afterwards
-  // so animation of globe 'fly in' the screen runs when page is loaded
-  &.animate .globe img {
-    // animation with ease-out timing function on steroids - cubic-bezier(),
-    // so on page load globe 'fly in' quickly with slow end
-    animation: globe_FlyIn 0.7s 0s cubic-bezier(0.02, 0.01, 0.21, 1);
-  }
-  &.animate::before {
-    // animation of shadow under the globe when it 'fly in'
-    animation: shadow_FlyIn 0.7s linear;
-  }
-  &.animate .headline {
-    animation: headline_slideIn 0.7s;
-  }
-
-  // class .animateOut is added to header when other continent is clicked and removed afterwards
-  // so animation of globe 'fly out' runs when you leave the page
-  &.animateOut .globe img {
-    // animation of globe 'fly out' of the screen when
-    animation: globe_FlyOut 0.5s ease-in-out forwards;
-  }
-  &.animateOut::before {
-    // animation of shadow under the globe when it 'fly out'
-    animation: shadow_FlyOut 0.5s linear forwards;
-  }
-  &.animateOut .headline {
-    animation: headline_slideOut 0.5s forwards;
-  }
+  // GLOBE
 
   .globe {
     position: absolute;
@@ -128,10 +75,61 @@
       // animation: globe_Pulsing 10s 1s ease infinite;
     }
   }
+
+  // GLOBE SHADOW
+
+  &::before {
+    content: "";
+    display: block;
+    width: 30rem;
+    height: 29rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-position: 35% 100%;
+    background-repeat: no-repeat;
+    background-size: 160% 100%;
+    background-image: $globe-shadow;
+    // infinite animation of slow globe shadow pulsing in a space
+    // animation: shadow_Pulsing 10s 1s ease infinite;
+  }
+
+  // ANIMATIONS ON PAGE LOAD
+
+  // class .animate is added to header on page load and removed afterwards
+  // so animation of globe 'fly in' the screen runs when page is loaded
+  &.animateIn .globe img {
+    // animation with ease-out timing function on steroids - cubic-bezier(),
+    // so on page load globe 'fly in' quickly with slow end
+    animation: globe_FlyIn 0.7s 0s cubic-bezier(0.02, 0.01, 0.21, 1);
+  }
+  &.animateIn::before {
+    // animation of shadow under the globe when it 'fly in'
+    animation: shadow_FlyIn 0.7s linear;
+  }
+  &.animateIn .headline {
+    left: -40rem;
+  }
+
+  // ANIMATIONS ON LEAVING PAGE
+
+  // class .animateOut is added to header when other continent is clicked and removed afterwards
+  // so animation of globe 'fly out' runs when you leave the page
+  &.animateOut .globe img {
+    // animation of globe 'fly out' of the screen when
+    animation: globe_FlyOut 0.5s ease-in-out forwards;
+  }
+  &.animateOut::before {
+    // animation of shadow under the globe when it 'fly out'
+    animation: shadow_FlyOut 0.5s linear forwards;
+  }
+  &.animateOut .headline {
+    left: -40rem;
+  }
 }
 
-// GLOBE ANIMATIONS
-// ================
+// ANIMATIONS
+// ==========
 
 // combination of scaling and rotating,
 // with axis of rotating far on the left side,

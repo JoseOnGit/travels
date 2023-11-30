@@ -2,28 +2,27 @@ import React, { FC, useEffect, useState } from "react";
 import { TripType } from "../../types/types";
 import cx from "classnames";
 import { TripListItem } from "./TripListItem";
-
 import styles from "../../styles/tripMenu.module.scss";
-import { useParams } from "react-router-dom";
 
 type Props = {
   continentTrips: TripType[];
+  enteringSite: boolean;
   leavingSite: boolean;
 };
 
-const TripList: FC<Props> = ({ continentTrips, leavingSite }) => {
-  const { continent } = useParams();
-
+const TripList: FC<Props> = ({ continentTrips, enteringSite, leavingSite }) => {
   const [tripListClasses, setTripListClasses] = useState(
     styles.tripMenuWrapper
   );
 
   useEffect(() => {
-    setTripListClasses(cx(styles.tripMenuWrapper, styles.animate));
-    window.setTimeout(() => {
-      setTripListClasses(styles.tripMenuWrapper);
-    }, 700);
-  }, [continent]);
+    if (enteringSite) {
+      setTripListClasses(cx(styles.tripMenuWrapper, styles.animate));
+      window.setTimeout(() => {
+        setTripListClasses(styles.tripMenuWrapper);
+      }, 700);
+    }
+  }, [enteringSite]);
 
   useEffect(() => {
     if (leavingSite) {

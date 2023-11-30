@@ -1,25 +1,29 @@
 import React, { FC, useEffect, useState } from "react";
 import { ContinentType } from "../types/types";
 import cx from "classnames";
-import { useParams } from "react-router-dom";
 import styles from "../styles/header.module.scss";
 
 type Props = {
   continentData: ContinentType;
+  enteringSite: boolean;
   leavingSite: boolean;
 };
 
-const HeaderContinent: FC<Props> = ({ continentData, leavingSite }) => {
-  const { continent } = useParams();
-
+const HeaderContinent: FC<Props> = ({
+  continentData,
+  enteringSite,
+  leavingSite,
+}) => {
   const [headerClasses, setHeaderClasses] = useState(styles.headerContinent);
 
   useEffect(() => {
-    setHeaderClasses(cx(styles.headerContinent, styles.animate));
-    window.setTimeout(() => {
-      setHeaderClasses(styles.headerContinent);
-    }, 700);
-  }, [continent]);
+    if (enteringSite) {
+      setHeaderClasses(cx(styles.headerContinent, styles.animateIn));
+      window.setTimeout(() => {
+        setHeaderClasses(styles.headerContinent);
+      }, 700);
+    }
+  }, [enteringSite]);
 
   useEffect(() => {
     if (leavingSite) {

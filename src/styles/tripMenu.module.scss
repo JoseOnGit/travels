@@ -3,20 +3,28 @@
 .tripMenuWrapper {
   position: relative;
   top: 30vh;
+  transition: 400ms;
 
-  &.animate .tripMenuItem {
-    transition: 0ms;
-    padding: 10rem 1rem;
-    border-top-color: var(--color-background);
-    border-bottom-color: var(--color-background);
+  &.animate {
+    top: 50vh;
 
-    a {
+    .tripMenuItem {
       transition: 0ms;
-      color: var(--color-background);
+      padding: 10rem 1rem;
+      border-top-color: var(--color-background);
+      border-bottom-color: var(--color-background);
+
+      a {
+        transition: 0ms;
+        color: var(--color-background);
+      }
     }
   }
-  &.animate.out .tripMenuItem {
-    transition: 400ms;
+
+  &.animate.out {
+    .tripMenuItem {
+      transition: 400ms;
+    }
   }
 }
 
