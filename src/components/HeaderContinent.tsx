@@ -1,9 +1,8 @@
 import React, { FC, useEffect, useState } from "react";
 import { ContinentType } from "../types/types";
 import cx from "classnames";
-
-import styles from "../styles/header.module.scss";
 import { useParams } from "react-router-dom";
+import styles from "../styles/header.module.scss";
 
 type Props = {
   continentData: ContinentType;
@@ -18,7 +17,7 @@ const HeaderContinent: FC<Props> = ({ continentData }) => {
     setHeaderClasses(cx(styles.headerContinent, styles.animate));
     window.setTimeout(() => {
       setHeaderClasses(styles.headerContinent);
-    }, 900);
+    }, 700);
   }, [continent]);
 
   return (

@@ -8,7 +8,7 @@
   padding: 0rem;
 
   border-radius: 10rem;
-  background-color: var(--color-menu-bground);
+  background-color: var(--background-transparent-mainNav);
   position: fixed;
   box-sizing: border-box;
   overflow-y: scroll;
@@ -38,7 +38,7 @@
     padding: 0rem;
     line-height: 0rem;
     visibility: hidden;
-    color: var(--color-menu-bground);
+    color: var(--background-transparent-mainNav);
 
     width: 100%;
 
@@ -70,17 +70,17 @@
 
     border-top-width: 0px;
     border-top-style: solid;
-    border-top-color: var(--color-menu-bground);
+    border-top-color: var(--background-transparent-mainNav);
     border-bottom-width: 0px;
     border-bottom-style: solid;
-    border-bottom-color: var(--color-menu-bground);
+    border-bottom-color: var(--background-transparent-mainNav);
 
     transition: 100ms;
     transition-delay: 0ms;
 
     a {
       text-decoration: none;
-      color: var(--color-menu-bground);
+      color: var(--background-transparent-mainNav);
 
       width: 100%;
       font-size: 0rem;
@@ -144,7 +144,7 @@
 
   z-index: 99;
 
-  background-color: var(--color-bottom-nav-bground);
+  background-color: var(--background-transparent-bottomNav);
 
   position: fixed;
   bottom: -0.1rem;
