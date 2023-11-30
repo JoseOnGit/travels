@@ -18,6 +18,7 @@ export const getContinentNavItems = () =>
   ContinentsData.map((menuItem, index) => ({
     id: index,
     icon: menuItem.icon,
+    name: menuItem.name,
     label: menuItem.label,
     link: getTravelByLocationRoutePath(menuItem.name),
   }));

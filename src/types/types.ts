@@ -30,6 +30,7 @@ export type ContinentType = {
 export type NavItemType = {
   id: number;
   icon: string;
+  name?: string;
   label: string;
   link: string;
   children?: NavItemType[];

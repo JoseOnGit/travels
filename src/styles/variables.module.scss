@@ -47,7 +47,8 @@ $globe-shadow: radial-gradient(
   --color-primary: #{$green};
 
   --background-transparent-mainNav: #{$white-transparent-9};
-  --background-transparent-bottomNav: #{$black-transparent-8};
+  // --background-transparent-bottomNav: #{$black-transparent-8};
+  --background-transparent-bottomNav: var(--color-primary);
 
   // --globe-brightness: ;
   --globe-shadow-center: #{$grey-500-transparent-9};
@@ -63,7 +64,8 @@ $globe-shadow: radial-gradient(
   --color-primary: #{$green};
 
   --background-transparent-mainNav: #{$grey-500-transparent-9};
-  --background-transparent-bottomNav: #{$grey-500-transparent-9};
+  // --background-transparent-bottomNav: #{$grey-500-transparent-9};
+  --background-transparent-bottomNav: var(--color-primary);
 
   --globe-brightness: brightness(0.9);
   --globe-shadow-center: #{$black-transparent-8};
