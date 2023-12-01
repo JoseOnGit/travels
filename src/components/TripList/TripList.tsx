@@ -3,34 +3,48 @@ import { TripType } from "../../types/types";
 import cx from "classnames";
 import { TripListItem } from "./TripListItem";
 import styles from "../../styles/tripMenu.module.scss";
+import { NavContext } from "../../contexts/NavProvider";
+import { toggleClasses } from "../../utils/utils";
 
 type Props = {
   continentTrips: TripType[];
-  enteringSite: boolean;
-  leavingSite: boolean;
 };
 
-const TripList: FC<Props> = ({ continentTrips, enteringSite, leavingSite }) => {
+const TripList: FC<Props> = ({ continentTrips }) => {
+  const { pageLoading, pageLeaving } = React.useContext(NavContext);
+
   const [tripListClasses, setTripListClasses] = useState(
     styles.tripMenuWrapper
   );
 
   useEffect(() => {
-    if (enteringSite) {
-      setTripListClasses(cx(styles.tripMenuWrapper, styles.animate));
-      window.setTimeout(() => {
-        setTripListClasses(styles.tripMenuWrapper);
-      }, 700);
-    }
-  }, [enteringSite]);
+    toggleClasses(
+      styles.tripMenuWrapper,
+      styles.animate,
+      pageLoading,
+      setTripListClasses
+    );
+    // if (pageLoading) {
+    //   setTripListClasses(cx(styles.tripMenuWrapper, styles.animate));
+    //   window.setTimeout(() => {
+    //     setTripListClasses(styles.tripMenuWrapper);
+    //   }, 700);
+    // }
+  }, [pageLoading]);
 
   useEffect(() => {
-    if (leavingSite) {
-      setTripListClasses(
-        cx(styles.tripMenuWrapper, styles.animate, styles.out)
-      );
-    }
-  }, [leavingSite]);
+    toggleClasses(
+      styles.tripMenuWrapper,
+      cx(styles.animate, styles.out),
+      pageLeaving,
+      setTripListClasses
+    );
+    // if (pageLeaving) {
+    //   setTripListClasses(
+    //     cx(styles.tripMenuWrapper, styles.animate, styles.out)
+    //   );
+    // }
+  }, [pageLeaving]);
 
   return (
     <div className={tripListClasses}>

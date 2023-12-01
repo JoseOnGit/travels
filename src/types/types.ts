@@ -1,13 +1,19 @@
 // import { Continent } from "../constants/constants";
 
+import { NavigateFunction } from "react-router-dom";
+
 export type ThemeContextType = {
   theme: string;
   toggleTheme: () => void;
 };
 
 export type NavContextType = {
+  pageLoading: boolean;
+  pageLeaving: boolean;
   isOpen: boolean;
   toggleOpenNav: () => void;
+  setLoadingPage: () => void;
+  setLeavingPage: (navigate: NavigateFunction, to: string) => void;
 };
 
 export type TripType = {
