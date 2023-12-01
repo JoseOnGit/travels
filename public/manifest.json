@@ -1,6 +1,6 @@
 {
   "short_name": "Mirka & Jozef Travels",
-  "name": "Our travels around the world.",
+  "name": "Mirka & Jozef: Our travels around the world...",
   "description": "Stories, photos and more...",
   "icons": [
     {
@@ -32,6 +32,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#336532",
-  "background_color": "#336532"
+  "theme_color": "#337c29",
+  "background_color": "#a6e89d"
 }

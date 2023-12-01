@@ -113,14 +113,14 @@
   &.animateIn .globe img {
     // animation with ease-out timing function on steroids - cubic-bezier(),
     // so on page load globe 'fly in' quickly with slow end
-    // animation: globe_FlyIn 0.7s 0s cubic-bezier(0.02, 0.01, 0.21, 1) backwards;
+    animation: globe_FlyIn 0.7s 0s cubic-bezier(0.02, 0.01, 0.21, 1) backwards;
   }
   &.animateIn::before {
     // animation of shadow under the globe when it 'fly in'
-    // animation: shadow_FlyIn 0.7s linear backwards;
+    animation: shadow_FlyIn 0.7s linear backwards;
   }
   &.animateIn .headline {
-    // left: -40rem;
+    left: -40rem;
   }
 
   // ANIMATIONS ON LEAVING PAGE
@@ -129,14 +129,14 @@
   // so animation of globe 'fly out' runs when you leave the page
   &.animateOut .globe img {
     // animation of globe 'fly out' of the screen when
-    // animation: globe_FlyOut 0.5s ease-in-out forwards;
+    animation: globe_FlyOut 0.5s ease-in-out forwards;
   }
   &.animateOut::before {
     // animation of shadow under the globe when it 'fly out'
-    // animation: shadow_FlyOut 0.5s linear forwards;
+    animation: shadow_FlyOut 0.5s linear forwards;
   }
   &.animateOut .headline {
-    // left: -40rem;
+    left: -40rem;
   }
 }
 
