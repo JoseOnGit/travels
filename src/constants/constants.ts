@@ -22,7 +22,8 @@ export const ContinentsData: ContinentType[] = [
     name: Continent.EUROPE,
     label: "Europe",
     icon: "/img/icon_europe.png",
-    globe: "/img/globe_europe.png",
+    // globe: "/img/globe_europe.png",
+    globe: "/img/globe_europe_320.avif",
   },
   {
     id: 2,
