@@ -20,7 +20,7 @@ const initialNavState: NavContextType = {
 const NavContext = React.createContext(initialNavState);
 
 const NavProvider: FC<Props> = ({ children }) => {
-  const [pageLoading, setPageLoading] = useState(false);
+  const [pageLoading, setPageLoading] = useState(true);
   const [pageLeaving, setPageLeaving] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -36,10 +36,6 @@ const NavProvider: FC<Props> = ({ children }) => {
   // turn ON pageLoading
   const setLoadingPage = () => {
     setPageLoading(true);
-
-    // window.setTimeout(() => {
-    //   setPageLoading(false);
-    // }, 700);
   };
 
   // turn ON pageLeaving and redirect to...

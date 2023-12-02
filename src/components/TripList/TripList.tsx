@@ -17,34 +17,34 @@ const TripList: FC<Props> = ({ continentTrips }) => {
     styles.tripMenuWrapper
   );
 
-  useEffect(() => {
-    toggleClasses(
-      styles.tripMenuWrapper,
-      styles.animate,
-      pageLoading,
-      setTripListClasses
-    );
-    // if (pageLoading) {
-    //   setTripListClasses(cx(styles.tripMenuWrapper, styles.animate));
-    //   window.setTimeout(() => {
-    //     setTripListClasses(styles.tripMenuWrapper);
-    //   }, 700);
-    // }
-  }, [pageLoading]);
+  // useEffect(() => {
+  //   toggleClasses(
+  //     styles.tripMenuWrapper,
+  //     styles.animate,
+  //     pageLoading,
+  //     setTripListClasses
+  //   );
+  //   // if (pageLoading) {
+  //   //   setTripListClasses(cx(styles.tripMenuWrapper, styles.animate));
+  //   //   window.setTimeout(() => {
+  //   //     setTripListClasses(styles.tripMenuWrapper);
+  //   //   }, 700);
+  //   // }
+  // }, [pageLoading]);
 
-  useEffect(() => {
-    toggleClasses(
-      styles.tripMenuWrapper,
-      cx(styles.animate, styles.out),
-      pageLeaving,
-      setTripListClasses
-    );
-    // if (pageLeaving) {
-    //   setTripListClasses(
-    //     cx(styles.tripMenuWrapper, styles.animate, styles.out)
-    //   );
-    // }
-  }, [pageLeaving]);
+  // useEffect(() => {
+  //   toggleClasses(
+  //     styles.tripMenuWrapper,
+  //     cx(styles.animate, styles.out),
+  //     pageLeaving,
+  //     setTripListClasses
+  //   );
+  //   // if (pageLeaving) {
+  //   //   setTripListClasses(
+  //   //     cx(styles.tripMenuWrapper, styles.animate, styles.out)
+  //   //   );
+  //   // }
+  // }, [pageLeaving]);
 
   return (
     <div className={tripListClasses}>

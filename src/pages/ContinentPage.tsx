@@ -28,7 +28,6 @@ const ContinentPage: FC = () => {
   useEffect(() => {
     // prettier-ignore
     if (!pageLoading && !pageLeaving) {
-      console.log('%c⧭ useEffect on ContinentPage runs setLoadingPage because continent in URL changed', 'color: #d0bfff', );
       setLoadingPage();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
