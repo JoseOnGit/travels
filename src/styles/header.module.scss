@@ -38,22 +38,50 @@
 
 // CONTINENTS HEADER
 
+$globe-width-portrait: 72vw;
+$globe-width-landscape: 40vh;
+
+$globe-width-portrait-10-percent: calc($globe-width-portrait / 10);
+$globe-width-landscape-10-percent: calc($globe-width-landscape / 10);
+
 @media (orientation: portrait) {
   .headerContinent {
     height: 30vh;
+
+    .headline {
+      top: calc(15vh - 1rem);
+    }
+
     .continentOnGlobe {
-      top: calc(-72vw / 100 * 10);
-      right: calc(-72vw / 100 * 10);
+      top: -($globe-width-portrait-10-percent);
+      right: -($globe-width-portrait-10-percent);
+    }
+    &::after {
+      top: calc(($globe-width-portrait-10-percent + 5rem) * -1);
+      right: calc(($globe-width-portrait-10-percent + 5rem) * -1);
     }
   }
 }
 
 @media (orientation: landscape) {
+  .pageHeader {
+    display: none;
+  }
+
+  .headline {
+    top: 0;
+  }
+
   .headerContinent {
-    height: 15vh;
+    height: 20vh;
+
     .continentOnGlobe {
-      top: calc(-40vh / 100 * 10);
-      right: calc(-40vh / 100 * 10);
+      top: -($globe-width-landscape-10-percent);
+      right: -($globe-width-landscape-10-percent);
+    }
+    &::after {
+      top: calc(($globe-width-landscape-10-percent + 5rem) * -1);
+      right: calc(($globe-width-landscape-10-percent + 5rem) * -1);
     }
   }
 }
@@ -67,6 +95,8 @@
 
   background: $header-continent-background;
 
+  transition: 400ms;
+
   z-index: 98;
 
   .headline {
@@ -74,99 +104,69 @@
     font-size: 4rem;
     text-align: left;
     position: absolute;
-    top: calc(15vh - 2rem);
+    // top: calc(15vh - 2rem);
     left: 1rem;
+
+    transition: 400ms;
+
+    z-index: 3;
   }
 
-  .continentOnGlobe {
-    width: 72vw;
-    height: 72vw;
+  // GLOBE
 
-    max-height: 40vh;
-    max-width: 40vh;
+  .continentOnGlobe {
+    width: $globe-width-portrait;
+    height: $globe-width-portrait;
+
+    max-height: $globe-width-landscape;
+    max-width: $globe-width-landscape;
 
     background-repeat: no-repeat;
     background-size: contain;
 
     position: absolute;
+
+    z-index: 2;
+  }
+
+  // GLOBE SHADOW
+
+  &::after {
+    content: "";
+    display: block;
+
+    width: calc($globe-width-portrait + 10rem);
+    height: calc($globe-width-portrait + 10rem);
+
+    max-width: calc($globe-width-landscape + 10rem);
+    max-height: calc($globe-width-landscape + 10rem);
+
+    position: absolute;
+
+    z-index: 1;
+
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-image: $globe-shadow;
   }
 
   &.animateIn {
     .continentOnGlobe {
-      animation: globe_FlyIn 0.7s 0s cubic-bezier(0.02, 0.01, 0.21, 1) backwards;
+      animation: globe_FlyIn 700ms 0s cubic-bezier(0.02, 0.01, 0.21, 1)
+        backwards;
+    }
+    &::after {
+      animation: shadow_FlyIn 700ms cubic-bezier(0.02, 0.01, 0.21, 1) backwards;
     }
   }
 
   &.animateOut {
     .continentOnGlobe {
-      animation: globe_FlyOut 0.5s ease-in-out forwards;
+      animation: globe_FlyOut 500ms ease-in-out forwards;
     }
-  }
-
-  // GLOBE
-
-  .globe {
-    position: absolute;
-    top: -5rem;
-    right: -4rem;
-
-    img {
-      filter: var(--globe-brightness);
-      max-height: 55vh;
-      // infinite animation of slow globe pulsing in a space
-      // animation: globe_Pulsing 10s 1s ease infinite;
+    &::after {
+      animation: shadow_FlyOut 500ms ease-in-out forwards;
     }
-  }
-
-  // GLOBE SHADOW
-
-  // &::before {
-  //   content: "";
-  //   display: block;
-  //   width: 30rem;
-  //   height: 29rem;
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  //   background-position: 35% 100%;
-  //   background-repeat: no-repeat;
-  //   background-size: 160% 100%;
-  //   background-image: $globe-shadow;
-  //   // infinite animation of slow globe shadow pulsing in a space
-  //   // animation: shadow_Pulsing 10s 1s ease infinite;
-  // }
-
-  // ANIMATIONS ON PAGE LOAD
-
-  // class .animate is added to header on page load and removed afterwards
-  // so animation of globe 'fly in' the screen runs when page is loaded
-  // &.animateIn .globe img {
-  //   // animation with ease-out timing function on steroids - cubic-bezier(),
-  //   // so on page load globe 'fly in' quickly with slow end
-  //   animation: globe_FlyIn 0.7s 0s cubic-bezier(0.02, 0.01, 0.21, 1) backwards;
-  // }
-  // &.animateIn::before {
-  //   // animation of shadow under the globe when it 'fly in'
-  //   animation: shadow_FlyIn 0.7s linear backwards;
-  // }
-  // &.animateIn .headline {
-  //   left: -40rem;
-  // }
-
-  // ANIMATIONS ON LEAVING PAGE
-
-  // class .animateOut is added to header when other continent is clicked and removed afterwards
-  // so animation of globe 'fly out' runs when you leave the page
-  &.animateOut .globe img {
-    // animation of globe 'fly out' of the screen when
-    animation: globe_FlyOut 0.5s ease-in-out forwards;
-  }
-  &.animateOut::before {
-    // animation of shadow under the globe when it 'fly out'
-    animation: shadow_FlyOut 0.5s linear forwards;
-  }
-  &.animateOut .headline {
-    left: -40rem;
   }
 }
 
@@ -186,18 +186,20 @@
 // makes shadow of globe 'fly in' the screen smootly together with globe
 @keyframes shadow_FlyIn {
   0% {
-    background-position: 120% 50%;
+    background-position: 100% 50%;
     background-size: 0% 0%;
     opacity: 0;
   }
+  20% {
+    opacity: 0;
+  }
   70% {
-    background-position-x: 35%;
-    background-size: 140% 100%;
-    opacity: 0.7;
+    background-position-x: 100%;
+    background-size: 100% 100%;
   }
   100% {
-    background-position-x: 35%;
-    background-size: 160% 100%;
+    background-position-x: 0%;
+    background-size: 100% 100%;
   }
 }
 
@@ -216,15 +218,14 @@
 // makes shadow disapear when globe 'fly out'
 @keyframes shadow_FlyOut {
   30% {
-    background-position: 35% 100%;
-    background-size: 180% 100%;
+    background-size: 95% 100%;
     opacity: 1;
   }
   60% {
     opacity: 0;
   }
   100% {
-    background-size: 0% 0%;
+    background-size: 250% 100%;
     opacity: 0;
   }
 }
